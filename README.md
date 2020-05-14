@@ -681,6 +681,7 @@ WITH searchValues AS
 SELECT ВОДИТЕЛЬ FROM ЗАКАЗ 
 JOIN ВОДИТЕЛЬ ON ВОДИТЕЛЬ.ИДЕНТИФИКАТОР = ЗАКАЗ.ВОДИТЕЛЬ
 JOIN searchValues s ON s."ТОВАР ПО ПРЕЙСКУРАНТУ" = ЗАКАЗ."ТОВАР ПО ПРЕЙСКУРАНТУ"
+WHERE s."ТОВАР ПО ПРЕЙСКУРАНТУ" = ЗАКАЗ."ТОВАР ПО ПРЕЙСКУРАНТУ"
 GROUP BY ВОДИТЕЛЬ
 HAVING COUNT(DISTINCT ВОДИТЕЛЬ) = (SELECT COUNT("ТОВАР ПО ПРЕЙСКУРАНТУ") FROM searchValues);
  ```
