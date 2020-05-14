@@ -900,7 +900,3 @@ GROUP BY ФАМИЛИЯ HAVING SUM(ИТОГО) > 1000000
  
  | ФАМИЛИЯ |
  | :------------- |
- 
-
-
-*db<>fiddle [here](https://dbfiddle.uk/?rdbms=postgres_12&fiddle=2c865126dfa66ea65a461ed75882cb94)*
