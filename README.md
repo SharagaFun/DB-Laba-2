@@ -678,11 +678,11 @@ WITH searchValues AS
     SELECT ИДЕНТИФИКАТОР FROM "ЦЕНТР ОБСЛУЖИВАНИЯ" WHERE КОМИССИОННЫЕ =
     (SELECT MAX(КОМИССИОННЫЕ) FROM "ЦЕНТР ОБСЛУЖИВАНИЯ")))
 )
-SELECT ВОДИТЕЛЬ FROM ЗАКАЗ 
+SELECT ФАМИЛИЯ FROM ЗАКАЗ 
 JOIN ВОДИТЕЛЬ ON ВОДИТЕЛЬ.ИДЕНТИФИКАТОР = ЗАКАЗ.ВОДИТЕЛЬ
 JOIN searchValues s ON s."ТОВАР ПО ПРЕЙСКУРАНТУ" = ЗАКАЗ."ТОВАР ПО ПРЕЙСКУРАНТУ"
 WHERE s."ТОВАР ПО ПРЕЙСКУРАНТУ" = ЗАКАЗ."ТОВАР ПО ПРЕЙСКУРАНТУ"
-GROUP BY ВОДИТЕЛЬ
+GROUP BY ФАМИЛИЯ
 HAVING COUNT(DISTINCT ВОДИТЕЛЬ) = (SELECT COUNT("ТОВАР ПО ПРЕЙСКУРАНТУ") FROM searchValues);
  ```
  
